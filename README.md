@@ -1,0 +1,2 @@
+"Migration model..." is the code for the simulation and creating figures. Contains all necessary functions and packages. The simulation program "sim" is on line 1208.
+The other "stats" files are saved simulations at equilibrium - can be used to create a variety of plots from existing runs. But not for using a saved population - those files are too big to upload, so need to run yourself. (3-5 minutes)
