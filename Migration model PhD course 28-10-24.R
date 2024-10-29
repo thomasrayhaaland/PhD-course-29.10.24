@@ -1690,15 +1690,15 @@ statstmp5 <- popstats(CC5)
 #####
 
 #### Creating individual-level database (takes ~1 minute) ####
-alldb <- create.alldb(test)
+alldb <- create.alldb(CC1)
 alldb <- polish.alldb(alldb)
 head(alldb,n=20)
-#saveRDS(alldb,file="Baseline alldb.R")
+#saveRDS(alldb,file="Baseline - constant poor alldb.R")
 
 # Extract evolutionary dynamics from alldb - see L1099
-evoltmp <- create.evoldyn(alldb,years=4901:5000,adult=F) # Remember to change years if needed!
+evoltmp <- create.evoldyn(alldb,years=26:200,adult=F) # Remember to change years if needed!
 head(evoltmp[[1]],n=20)
-#saveRDS(alldb,file="Baseline evoltmp.R")
+#saveRDS(alldb,file="Basline - constant poor evoltmp.R")
 ##### 
 
 #### Figures of all liability components
@@ -1786,15 +1786,15 @@ statstmp <- popstats(test)
 alldb <- create.alldb(test)
 alldb <- polish.alldb(alldb)
 #alldb <- filter(alldb,Rep!=4) # If excluding a divergent rep
-evoltmp <- create.evoldyn(alldb,years=26:100,adult=F)
-pdf(file="D:\\Migration\\paper2\\m3=0.02\\Control - staggered 0.5.pdf",width=7,height=7)
+evoltmp <- create.evoldyn(alldb,years=26:200,adult=F)
+pdf(file="Baseline - constant poor.pdf",width=7,height=7)
 evolplots(local=evoltmp,plots=c("BVs","PEs","Ls","TEs","Dests"))
 popplots(statstmp,mainfile=test,plot="endpopsize",legend=T)
 dev.off()
 #####
 
 # retrieve alldb
-alldb <- readRDS("D:\\Migration\\paper2\\m3=0.02\\v0=0.5, f=1\\sigmas_fine=sqrt(0.5) - Constant poor alldb.R")
+alldb <- readRDS("Baseline - constant poor alldb.R")
 h2s <- rpts <- BVs <- PEs <- Ls <- matrix(NA,max(alldb$Home),max(alldb$Rep)) # Storage matrices - values for each site and rep
 
 #### Variance components from alldb ####
