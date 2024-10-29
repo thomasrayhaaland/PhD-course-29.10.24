@@ -4,9 +4,9 @@ The other "stats" files are saved simulations at equilibrium - can be used to cr
 
 ## Workflow ##
 
-1: Run all the preamble and simulation function (I usually just run everything until line 1635). Set your working directory.
-2: Run a large simulation (~5000 years x 5 reps takes 3-4 minutes) and save the population (L 1638). See line 1138-1207 for info on sim function.
-3: Run statstmp and save (L 1639).
+1) Run all the preamble and simulation function (I usually just run everything until line 1635). Set your working directory.
+2) Run a large simulation (~5000 years x 5 reps takes 3-4 minutes) and save the population (L 1638). See line 1138-1207 for info on sim function.
+3) Run statstmp and save (L 1639).
 If you want to plot, run popplots, either from local files (e.g L 1640, uses arguments "local=statstmp,mainfile=test") or saved (e.g. L 1647, uses argument "saved=Control stats.R"). Vectors 'shorter' and 'allbutpopsize' (L 839) give examples of what you can plot.
 
 For running a climate change scenario (from line 1652), you need to first have a metapopulation at equilibrium, either locally or saved. (point 2-3 above)
